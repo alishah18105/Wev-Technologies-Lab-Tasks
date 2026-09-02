@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <section class = "registration-form">
+
+     <article>
+            <h1>Student Registration Form</h1><br>
+
+        <form action="submit_registration.php" method = "POST">
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required> <br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required> <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required> <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8"> <br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{11}"
+                placeholder="03XXXXXXXXX"
+                required>
+            <br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <br><br>
+            <br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br><br>
+
+            <label for="address">Address:</label>
+            
+            <textarea id="address" name="address" rows="5" cols="40" required></textarea>
+            <br><br>
+
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="">Select Semester</option>
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+                <option value="3">3rd Semester</option>
+                <option value="4">4th Semester</option>
+                <option value="5">5th Semester</option>
+                <option value="6">6th Semester</option>
+                <option value="7">7th Semester</option>
+                <option value="8">8th Semester</option>
+            </select>
+            <br><br>
+
+            <label>Select Any 6 Courses:</label>
+
+            <br>
+
+            <input type="checkbox" id="pf" name="course" value="Programming Fundamentals">
+            <label for="pf">Programming Fundamentals</label> <br>
+
+            <input type="checkbox" id="oop" name="course" value="Object Oriented Programming">
+            <label for="oop">Object Oriented Programming</label><br>
+
+            <input type="checkbox" id="discrete_maths" name="course" value="Discrete Mathematics">
+            <label for="discrete_maths">Discrete Mathematics</label><br>
+
+            <input type="checkbox" id="calculus" name="course" value="Calculus">
+            <label for="calculus">Calculus</label><br>
+
+            <input type="checkbox" id="sef" name="course" value="Software Engineering Fundamentals">
+            <label for="sef">Software Engineering Fundamentals</label><br>
+
+            <input type="checkbox" id="ict" name="course" value="Information and Communication Technology">
+            <label for="ict">Information and Communication Technology</label><br>
+
+            <input type="checkbox" id="eng" name="course" value="English">
+            <label for="eng">English</label><br>
+
+            <input type="checkbox" id="pst" name="course" value="Pakistan Studies">
+            <label for="pst">Pakistan Studies</label><br>
+
+            <br><br>
+
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+            
+        </form>
+     </article>
+    </section>
+</body>
+</html>

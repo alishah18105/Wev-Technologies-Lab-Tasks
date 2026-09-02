@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #ede9fe);
+    color: #222;
+}
+
+section {
+    width: 100%;
+}
+
+article {
+    width: 650px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color:#7c3aed;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+
+    padding: 11px 12px;
+
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+
+    background-color: #fff;
+
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #4caf50;
+
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.35);
+}
+
+textarea {
+    max-width: 500px;
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+    accent-color: #4caf50;
+}
+
+input[type="radio"] + label {
+    display: inline;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+input[type="checkbox"] {
+    accent-color: #4caf50;
+}
+
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+    margin-left: 4px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 11px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #7c3aed;;
+    color: white;
+}
+
+input[type="reset"] {
+    background-color: #757575;
+    color: white;
+    margin-left: 8px;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #e57373;
+}
+
+input:valid {
+    border-color: #cfcfcf;
+}

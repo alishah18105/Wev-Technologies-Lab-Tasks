@@ -1,0 +1,29 @@
+.website-header {
+  background-color: #ffb07c;
+  min-height: 80px;
+}
+
+.navigation-bar {
+  background-color: #e7e8d5;
+  min-height: 36px;
+}
+
+.main-content {
+  background-color: #f5f5f5;
+  min-height: 140px;
+}
+
+.sidebar {
+  background-color: #d7eaf7;
+  min-height: 140px;
+}
+
+.footer {
+  background-color: #d3d3d3;
+  min-height: 48px;
+}
+
+.navigation-bar a,
+.sidebar a {
+  color: #1769c2;
+}

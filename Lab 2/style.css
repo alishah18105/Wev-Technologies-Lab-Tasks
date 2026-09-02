@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.site-header {
+    text-align: center;
+    padding: 35px 20px 0;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+}
+
+.site-header h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.site-header p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 20px;
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 10px 22px;
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #1e3a8a;
+}
+
+section {
+    background-color: white;
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+section > h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#videos {
+    text-align: center;
+}
+
+#videos article {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    margin: 1%;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+
+#videos h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+#videos video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+
+
+#audio {
+    text-align: center;
+}
+
+#audio article {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin: 1%;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+#audio h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#audio audio {
+    width: 100%;
+}
+
+
+#timetable {
+    overflow-x: auto;
+}
+
+#timetable h2 {
+    margin-bottom: 30px;
+}
+
+#timetable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 25px auto;
+    background-color: white;
+}
+
+#timetable th,
+#timetable td {
+    border: 1px solid #94a3b8;
+    padding: 12px 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#timetable th {
+    background-color: #dbeafe;
+    color: #172554;
+    font-weight: bold;
+}
+
+#timetable table:first-of-type tr:first-child th {
+    background-color: #bfdbfe;
+    font-size: 22px;
+}
+
+#timetable table:first-of-type tr:nth-child(2) th {
+    background-color: #eff6ff;
+    font-size: 16px;
+}
+
+#timetable table:first-of-type tr:nth-child(3) th {
+    background-color: #93c5fd;
+}
+
+#timetable table:first-of-type tr:nth-child(4) th {
+    background-color: #dbeafe;
+    font-size: 14px;
+}
+
+
+#timetable table:first-of-type tr:not(:first-child) th:first-child {
+    background-color: #eff6ff;
+}
+
+
+
+#timetable table:first-of-type td[rowspan] {
+    background-color: #fef3c7;
+    font-weight: bold;
+    color: #92400e;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+
+
+#timetable table:first-of-type tr:hover td {
+    background-color: #f8fafc;
+}
+
+
+
+#timetable table:nth-of-type(2) th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+#timetable table:nth-of-type(2) tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+#timetable table:nth-of-type(2) tr:hover {
+    background-color: #e0f2fe;
+}
+
+#timetable table:nth-of-type(2) td {
+    padding: 12px;
+}
+
+
+
+#timetable h3 {
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 12px 35px;
+    border: 2px solid #1e3a8a;
+    border-radius: 8px;
+    color: #1e3a8a;
+    background-color: #eff6ff;
+}
+
