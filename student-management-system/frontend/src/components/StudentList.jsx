@@ -50,7 +50,7 @@ const StudentList = ({ students, deleteStudent, startEdit }) => {
                 <td>{student.email}</td> <td>
                   <div className="action-btns">
                     <button className='edit' onClick={() => startEdit(student)}><Pencil size={15} /></button>
-                    <button className='delete' onClick={() => deleteStudent(student.seat_number)}><Trash size={15} /></button>
+                    <button className='delete' onClick={() => deleteStudent(student.id)}><Trash size={15} /></button>
                   </div>
                 </td>
               </tr>))}
@@ -60,5 +60,4 @@ const StudentList = ({ students, deleteStudent, startEdit }) => {
     </div>
   )
 }
-
 export default StudentList

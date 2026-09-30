@@ -2,26 +2,28 @@ import { useEffect, useState } from "react";
 
 const StudentForm = ({ addStudent, editingStudent, editStudent }) => {
   const [formData, setFormData] = useState({
-    student_name: "",
-    seat_number: "",
-    semester: "",
-    program: "",
-    department: "",
-    email: ""
-  });
+  id: null,
+  student_name: "",
+  seat_number: "",
+  semester: "",
+  program: "",
+  department: "",
+  email: ""
+});
 
-  useEffect(() => {
-    if (editingStudent) {
-      setFormData({
-        student_name: editingStudent.student_name,
-        seat_number: editingStudent.seat_number,
-        semester: editingStudent.semester,
-        program: editingStudent.program,
-        department: editingStudent.department,
-        email: editingStudent.email
-      });
-    }
-  }, [editingStudent]);
+useEffect(() => {
+  if (editingStudent) {
+    setFormData({
+      id: editingStudent.id,
+      student_name: editingStudent.student_name,
+      seat_number: editingStudent.seat_number,
+      semester: editingStudent.semester,
+      program: editingStudent.program,
+      department: editingStudent.department,
+      email: editingStudent.email
+    });
+  }
+}, [editingStudent]);
 
   const handleChange = (event) => {
     setFormData({
@@ -40,13 +42,14 @@ const StudentForm = ({ addStudent, editingStudent, editStudent }) => {
     }
 
     setFormData({
-      student_name: "",
-      seat_number: "",
-      semester: "",
-      program: "",
-      department: "",
-      email: ""
-    });
+  id: null,
+  student_name: "",
+  seat_number: "",
+  semester: "",
+  program: "",
+  department: "",
+  email: ""
+});
   };
 
   return (

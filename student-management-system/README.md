@@ -1,31 +1,32 @@
 # Student Management System
 
-A React-based Student Management System developed as **Web Technologies Lab Task 7**.
+A full-stack Student Management System developed as **Web Technologies Lab Task 7**.
 
-The project demonstrates the use of React components, props, state management, event handling, forms, hooks, and dynamic rendering to build an interactive student management interface.
+The project uses **React.js** for the frontend, **Node.js + Express.js** for the backend, and **PostgreSQL** for persistent data storage.
 
 ## Lab Task
 
 **Course:** Web Technologies
 **Lab Task:** 7
-**Technology:** React.js
-**Build Tool:** Vite
+**Frontend:** React.js + Vite
+**Backend:** Node.js + Express.js
+**Database:** PostgreSQL
 
 ## Features
 
-* Display registered students in a table
-* Add/register a new student
-* Edit existing student information
-* Delete a student
-* Search students instantly
-* Dynamically display the total number of students
-* Automatically update the student list when data changes
-* Responsive table layout
-* Form validation using HTML `required` attributes
+* Add/register students
+* Edit student information
+* Delete students
+* Search students
+* Display total students
+* PostgreSQL database storage
+* CRUD operations through REST APIs
+* Form validation
+* Responsive student table
 
 ## Student Information
 
-The system stores the following information for each student:
+Each student contains:
 
 * Student Name
 * Seat Number
@@ -34,117 +35,96 @@ The system stores the following information for each student:
 * Department
 * Email
 
-The **seat number** is used as the unique identifier for students.
+The **seat number** is used as the unique identifier.
+
+## Project Architecture
+
+```text
+student-management-system/
+│
+├── frontend/       # React + Vite
+├── backend/        # Express.js + PostgreSQL
+├── package.json    # Root scripts
+└── README.md
+```
+
+Application flow:
+
+```text
+React Frontend
+      ↓
+REST API
+      ↓
+Express.js Backend
+      ↓
+PostgreSQL Database
+```
+
+The root `npm run dev` command runs both frontend and backend using `concurrently`.
 
 ## React Concepts Used
 
-### Components
+* Components
+* Props
+* `useState`
+* `useEffect`
+* Controlled components
+* Form handling
+* Conditional rendering
+* `map()`
+* `filter()`
+* Live search
+* API communication
 
-The application is divided into reusable components:
+### Frontend Structure
 
 ```text
-src/
-├── components/
-│   ├── Header.jsx
-│   ├── StudentForm.jsx
-│   └── StudentList.jsx
-│
-├── App.jsx
-└── main.jsx
+frontend/
+└── src/
+    ├── components/
+    │   ├── Header.jsx
+    │   ├── StudentForm.jsx
+    │   └── StudentList.jsx
+    │
+    ├── App.jsx
+    ├── index.css
+    └── main.jsx
 ```
 
-### Props
+## Backend
 
-Props are used to pass data and functions between components.
+The backend is built using **Node.js and Express.js** and handles student CRUD operations and communication with PostgreSQL.
 
-
-### State Management
-
-React's `useState` hook is used to manage:
-
-* Student records
-* Current editing student
-* Form data
-* Search term
-
-Example:
-
-```jsx
-const [students, setStudents] = useState([]);
+```text
+backend/
+├── server.js
+├── package.json
+└── ...
 ```
 
-### Adding Students
+### Backend Technologies
 
-When the registration form is submitted, a new student object is created and added to the `students` state.
-
-### Delete
-
-Students are removed using JavaScript's `filter()` method.
-
-The seat number is used to identify the student.
-
-### Edit
-
-The Edit feature uses a combination of:
-
-* `editingStudent` state
-* `useEffect`
-* Controlled inputs
-* `map()`
-
-When Edit is clicked, the selected student's information is loaded into the form. After updating the information, the student is replaced in the array.
-
-### Search
-
-The project includes live student searching without a search button.
-
-The search term is stored using state.
-
-The table then displays the filtered results.
-
-## User Interface
-
-The application contains three main sections:
-
-### 1. Header
-
-Displays the title and basic information about the application.
-
-### 2. Student Registration Form
-
-Allows users to enter:
-
-* Student name
-* Seat number
-* Semester
-* Program
-* Department
-* Email
-
-The same form is used for both **registration** and **editing**.
-
-### 3. Registered Students
-
-Displays all registered students in a table with:
-
-* Student ID
-* Student Name
-* Seat Number
-* Semester
-* Program
-* Department
-* Email
-* Edit and Delete actions
-
-A search bar is also available for quickly finding students.
+* Node.js
+* Express.js
+* PostgreSQL
+* `pg`
+* CORS
+* dotenv
 
 ## Technologies Used
 
-* **React.js** — Frontend library
-* **JavaScript (ES6+)** — Application logic
-* **HTML5** — Structure and forms
-* **CSS3** — Styling and layout
-* **Vite** — Development environment and build tool
+| Technology | Purpose               |
+| ---------- | --------------------- |
+| React.js   | Frontend              |
+| Vite       | Development tool      |
+| JavaScript | Application logic     |
+| HTML5      | Structure and forms   |
+| CSS3       | Styling               |
+| Node.js    | Backend runtime       |
+| Express.js | REST API              |
+| PostgreSQL | Database              |
+| pg         | PostgreSQL connection |
+| dotenv     | Environment variables |
 
 ## Installation and Setup
 
@@ -152,11 +132,6 @@ Clone the repository:
 
 ```bash
 git clone <repository-url>
-```
-
-Navigate to the project directory:
-
-```bash
 cd student-management-system
 ```
 
@@ -164,60 +139,60 @@ Install dependencies:
 
 ```bash
 npm install
+cd frontend
+npm install
+cd ../backend
+npm install
 ```
 
-Start the development server:
+Make sure PostgreSQL is running and configure the database credentials in the backend `.env` file.
+
+Example:
+
+```env
+DB_USER=your_username
+DB_HOST=localhost
+DB_NAME=student_management
+DB_PASSWORD=your_password
+DB_PORT=5432
+```
+
+Start the complete project from the root folder:
 
 ```bash
 npm run dev
 ```
 
-Open the local development URL provided by Vite in your browser.
-
-## Project Structure
+The frontend will normally run at:
 
 ```text
-student-management-system/
-│
-├── public/
-│
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── StudentForm.jsx
-│   │   └── StudentList.jsx
-│   │
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-│
-├── package.json
-├── package-lock.json
-└── README.md
+http://localhost:5173
+```
+
+## Root Scripts
+
+```json
+"scripts": {
+  "client": "cd frontend && npm run dev",
+  "server": "cd backend && npm run dev",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
+}
 ```
 
 ## Learning Outcomes
 
-Through this lab task, the following React concepts were practiced:
+This lab task provided practice with:
 
-* Creating React components
-* Component-based application structure
-* Passing props
-* Destructuring props
-* Managing state using `useState`
-* Using `useEffect`
-* Handling form submission
-* Handling input changes
-* Controlled components
-* Passing functions through props
-* Dynamic rendering using `map()`
-* Removing data using `filter()`
-* Updating data using `map()`
-* Implementing live search
-* Conditional rendering
-* Working with arrays of objects in React
+* React component-based development
+* Props and state management
+* React hooks
+* Forms and controlled inputs
+* REST API communication
+* Express.js backend development
+* PostgreSQL database integration
+* CRUD operations
+* Frontend-backend integration
 
 ## Conclusion
 
-This project demonstrates how React can be used to create a dynamic and interactive Student Management System. Instead of using a static HTML table, the application manages student data through React state and automatically updates the user interface whenever students are added, edited, deleted, or searched.
-
+This project demonstrates a complete **React + Express.js + PostgreSQL** application where the frontend handles the user interface, the backend manages API requests, and PostgreSQL provides persistent student data storage.
